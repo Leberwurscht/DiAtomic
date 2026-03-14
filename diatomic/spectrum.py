@@ -327,8 +327,8 @@ class Spectrum:
 
     def _compute_line_strength(self, out_wavens, dmfs, ninter=1000):
 
-        ivec_inds = out_wavens[:, 0].astype(np.int)
-        fvec_inds = out_wavens[:, 8].astype(np.int)
+        ivec_inds = out_wavens[:, 0].astype(int)
+        fvec_inds = out_wavens[:, 8].astype(int)
 
         print(ivec_inds, fvec_inds)
 
