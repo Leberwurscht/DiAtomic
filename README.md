@@ -1,6 +1,22 @@
 <img src="https://github.com/ihavalyova/DiAtomic/blob/master/doc/logo_new.png" width="60%" height="60%">
 
----
+Update March 2026 by Leberwurscht
+---------------------------------
+
+* Original project is https://github.com/ihavalyova/DiAtomic by I. Havalyova and A. Pashov (see 'Cite as' below)
+* Modernized (pyproject.toml instead of setup.py, CMake, etc.)
+* Fixed compilation errors on Windows and Mac
+* Automatically-built wheel packages via Github/Gitlab CI
+* Made pip installable from Github:
+  * `pip install git+https://github.com/Leberwurscht/DiAtomic.git`
+* Gitlab mirror as alternative (Linux only!)
+  * `pip install git+https://gitlab.com/leberwurscht/DiAtomic.git`
+* After installation, GUI can now be run via executing `python3 -m diatomic.gui`
+* Or can be used as a library: `from diatomic import Diatomic, Grid, Basis, Hamiltonian, PotEnr, Spectrum`
+* These changes were done with LLM assistance
+
+Original README
+---------------
 
 [![build](https://github.com/ihavalyova/DiAtomic/workflows/build/badge.svg?branch=master)](https://github.com/ihavalyova/DiAtomic/actions)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/ihavalyova/DiAtomic.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/ihavalyova/DiAtomic/context:python)
