@@ -4,7 +4,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import pyqtgraph as pg
 
 try:
-    from ui_diatom import Ui_MainWindow
+    from .ui_diatom import Ui_MainWindow
 except (ImportError, KeyError) as exc:
     pass
     # qtCreatorFile = "%s/UI/es.ui"%lib_path
