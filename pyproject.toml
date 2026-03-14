@@ -1,0 +1,65 @@
+[build-system]
+requires = [
+    "scikit-build-core>=0.11",
+    "pybind11>=2.12",
+]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "diatomic-computations"
+version = "0.1.0"
+description = "Diatomic Molecules Computations"
+readme = "README.md"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Ilvie Havalyova", email = "havaliova@gmail.com"}
+]
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+keywords = [
+    "physics",
+    "diatomic-molecule",
+    "coupled-channels",
+    "energy-levels",
+    "deperturbation",
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "scipy>=1.7.0",
+    "matplotlib>=3.3.0",
+]
+
+[project.optional-dependencies]
+iminuit = ["iminuit>=2.0"]
+py3nj = ["py3nj>=0.2"]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ihavalyova/DiAtomic"
+Documentation = "https://github.com/ihavalyova/DiAtomic/blob/master/doc/Diatomic.md"
+Repository = "https://github.com/ihavalyova/DiAtomic"
+Issues = "https://github.com/ihavalyova/DiAtomic/issues"
+
+[tool.scikit-build]
+minimum-version = "0.11"
+wheel.packages = ["diatomic"]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]

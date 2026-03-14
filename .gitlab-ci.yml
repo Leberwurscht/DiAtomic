@@ -1,0 +1,21 @@
+# GitLab CI/CD - Minimal configuration
+# Primary CI/CD is on GitHub Actions (all platforms free)
+# This file is kept for GitLab mirror compatibility
+
+stages:
+  - test
+
+test:
+  stage: test
+  image: python:3.11
+  script:
+    - pip install flake8 pytest numpy scipy matplotlib
+    - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || true
+    - pip install build
+    - python -m build --wheel
+    - pip install dist/*.whl
+    - pytest test/ -v || true
+  only:
+    - merge_requests
+    - master
+    - main
