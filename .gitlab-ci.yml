@@ -15,6 +15,10 @@ test:
     - python -m build --wheel
     - pip install dist/*.whl
     - pytest test/ -v || true
+  artifacts:
+    paths:
+      - dist/*.whl
+    expire_in: 30 days
   only:
     - merge_requests
     - master
