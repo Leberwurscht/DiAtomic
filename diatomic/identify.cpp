@@ -190,7 +190,8 @@ py::array_t<double> identify_by_closest_energy(double **clevels, double **elevel
     double j_tmp = 0.0, omega_tmp = 0.0, sigma_tmp = 0.0;
     double cenrg_tmp = 0.0, eenrg_tmp = 0.0;
     double diff_enrg_tmp = 0.0, unc_tmp = 0.0;
-    double ccoefs_tmp [nch] = {0.0};
+    double* ccoefs_tmp = new double[nch];
+    for (int k = 0; k < nch; k++) ccoefs_tmp[k] = 0.0;
 
     for(int i = 0; i < eshapex; i++)
     {
@@ -288,6 +289,8 @@ py::array_t<double> identify_by_closest_energy(double **clevels, double **elevel
 
     /* reshape result */
     result.resize({nrows, ncols});
+
+    delete[] ccoefs_tmp;
 
     return result;
 }
