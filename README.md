@@ -11,6 +11,7 @@ Update March 2026 by Leberwurscht
   * `pip install git+https://github.com/Leberwurscht/DiAtomic.git`
 * Gitlab mirror as alternative (Linux only!)
   * `pip install git+https://gitlab.com/leberwurscht/DiAtomic.git`
+* Can also be manually built by cloning the repository and running `pip install .`
 * After installation, GUI can now be run via executing `python3 -m diatomic.gui`
 * Or can be used as a library: `from diatomic import Diatomic, Grid, Basis, Hamiltonian, PotEnr, Spectrum`
 * These changes were done with LLM assistance
