@@ -20,6 +20,17 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Cache cibuildwheel
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~\AppData\Local\pypa\cibuildwheel
+          ~/.cache/cibuildwheel
+          ~/Library/Caches/cibuildwheel
+        key: cibuildwheel-${{ runner.os }}-${{ hashFiles('**/pyproject.toml') }}
+        restore-keys: |
+          cibuildwheel-${{ runner.os }}-
+
     - name: Build wheels
       uses: pypa/cibuildwheel@v2.19
       env:
